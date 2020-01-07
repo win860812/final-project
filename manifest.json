@@ -1,0 +1,37 @@
+{
+  "name": "Veterans General Hospital",
+  "version": "1.0.2",
+  "description": "Comment section",
+  "permissions": [
+    "tabs",
+    "identity",
+    "identity.email",
+    "*://wd.vghtpe.gov.tw/*/Teacher.action?tid=*",
+    "*://wd.vghtpe.gov.tw/Teacher.action?tid=*",
+    "*://www.vghtpe.gov.tw/Teacher.action?tid=*"
+    
+  ],
+
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [{
+    "matches": [
+      "*://wd.vghtpe.gov.tw/*/Teacher.action?tid=*",
+      "*://wd.vghtpe.gov.tw/Teacher.action?tid=*",
+      "*://www.vghtpe.gov.tw/Teacher.action?tid=*"
+    ],
+    "js": ["Veterans.js"]
+    
+  }],
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "main.html"
+  },
+  "web_accessible_resources": ["script.js"]
+  
+ 
+}
